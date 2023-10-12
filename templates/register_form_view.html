@@ -1,0 +1,52 @@
+<?php
+include_once "partials/header.html";
+?>
+
+<!-- CREATION DE COMPTE -->
+<h1>Je n'ai pas de compte</h1>
+
+<form action="register_form.php" method="POST">
+
+    <legend>Créez un compte</legend>
+
+    <fieldset>
+        <ul>
+
+            <li>
+                <label for="user_name">Votre nom: </label>
+                <input type="text" id="user_name" name="user_name">
+            </li>
+
+            <li>
+                <label for="user_first_name">Votre prénom: </label>
+                <input type="text" id="user_first_name" name="user_first_name">
+            </li>
+
+            <li>
+                <label for="user_alias">Votre pseudo: </label>
+                <input type="text" id="user_alias" name="user_alias">
+            </li>
+
+            <li>
+                <label for="user_email">Votre adresse email: </label>
+                <input type="text" id="user_email" name="user_email">
+            </li>
+
+            <li>
+                <label for="user_password">Votre mot de passe: </label>
+                <input type="text" id="user_password" name="user_password">
+            </li>
+
+            <li>
+                <button type="submit">Enregistrer</button>
+                <input type="reset" value="annuler">
+            </li>
+
+        </ul>
+    </fieldset>
+
+</form>
+
+<?php
+include_once "partials/footer.html"
+?>

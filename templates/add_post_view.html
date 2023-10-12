@@ -1,0 +1,56 @@
+<?php
+include_once "partials/header.html";
+?>
+
+
+<!-- ADD POST FORM -->
+<form action="add_post.php" method="POST">
+    
+    <fieldset>
+        <legend>Nouvel article</legend>
+
+        <ul>
+            <li>
+                <label for="post_author">Auteur: </label>
+                <input type="text" id="post_author" name="post_author">
+            </li>
+
+            <li>
+                <label for="post_title">Titre :</label>
+                <input type="text" id="post_title" name="post_title">
+            </li>
+
+            <li>
+                <label for="id_category">Catégorie</label>
+                <select name="id_category" id="id_category">
+                        <option>-- Sélectionnez une catégorie pour cet article --</option>
+
+                        <?php foreach($categories as $category): ?>
+                        <option name="<?= $category['id_category'] ?>">
+                            <?= $category['category_name'] ?>
+                        </option>
+                        <?php endforeach ?>
+                </select>    
+            </li>
+
+            <li>
+                <label class="textarea" for="post_content">Article :</label>
+                <textarea id="post_content" name="post_content" rows="20"></textarea>
+            </li>
+
+            <li>
+                <button type="submit">Enregistrer</button>
+            </li>
+
+            <li>
+                <input type="reset" value="annuler">
+            </li>
+        </ul>
+    </fieldset>
+
+</form>
+
+
+<?php
+include_once "partials/footer.html"
+?>

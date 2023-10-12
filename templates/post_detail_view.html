@@ -1,0 +1,68 @@
+<?php
+include_once "partials/header.html";
+?>
+
+
+<!-- Action -->
+<div>
+    <ul><p>Actions:</p>
+        <li>
+            <a href="edit_post.php?article_id=<?= $article_id ?>">Modifier</a>
+        </li>
+
+        <li>
+            <a href="delete_post.php?article_id=<?= $article['id_post'] ?>">Supprimer la publication et les commentaires</a>
+        </li>
+    </ul>
+</div>
+
+
+
+<!--DETAIL ARTICLE-->
+<h1><?= $article['post_title'] ?></h1>
+<P><?= $article['post_date'] ?></P>
+<p><?= $article['post_content'] ?></p>
+<p><?= $article['post_author'] ?></p>
+
+
+
+<!-- COMMENTAIRES DE L'ARTICLE -->
+<h1>Commentaires de l'article</h1>
+
+<?php foreach ($comments as $comment): ?>
+    <p><?= $comment['comment_author'] ?></p>
+    <em><?= $comment['comment_date'] ?></em>
+    <p><?= $comment['comment_content'] ?></p>
+<?php endforeach?> 
+
+
+
+<!-- FORM AJOUT DE COMMENTAIRES-->
+<h1>Ajouter un commentaire</h1>
+
+<form action="add_comment.php?article_id=<?= $article_id ?>" method="POST">
+    <fieldset>
+        <legend>Rédiger un commentaire</legend>
+        <ul>
+            <li>
+                <label for="comment_author">Auteur: </label>
+                <input type="text" id="comment_author" name="comment_author">
+            </li>
+
+            <li>
+                <label class="textarea" for="comment_content">Commentaire :</label>
+                <textarea id="comment_content" name="comment_content" rows="10"></textarea>
+            </li>
+        </ul>
+
+            <div>
+                <button type="submit">Ajouter</button>
+                <input type="reset" value="Annuler">
+            </div>
+       
+    </fieldset>
+</form>
+
+<?php
+include_once "partials/footer.html";
+?>

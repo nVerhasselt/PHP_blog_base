@@ -1,0 +1,54 @@
+<?php
+include_once "partials/header.html";
+?>
+
+<!-- Action -->
+<div>
+    <p>Actions:</p>    
+    <a href="delete_post.php?article_id=<?= $article_to_edit['id_post'] ?>">Supprimer la publication et les commentaires</a>  
+</div>
+
+<form action="update_post.php?article_id=<?= $article_to_edit['id_post'] ?>" method="POST">
+    <fieldset>
+        <legend>Modifier un article</legend>
+        <ul>
+            <li>
+                <label for="post_author">Auteur: </label>
+                <input type="text" id="post_author" name="post_author" value="<?= $article_to_edit['post_author']?>">
+            </li>
+
+            <li>
+                <label for="post_title">Titre :</label>
+                <input type="text" id="post_title" name="post_title" value="<?= $article_to_edit['post_title']?>">
+            </li>
+
+            <li>
+                <label for="category_select">Catégorie</label>
+                <select name="category_name" id="categorie_select">
+                        <option value="<?= $article_to_edit['id_category']?>">--Sélectionnez une catégorie pour cet article--</option>
+                        <option value="cat1" name="1">Catégorie 1</option>
+                        <option value="cat2" name="2">Catégorie 2</option>
+                        <option value="cat3" name="2">Catégorie 3</option>
+                </select> 
+            </li>
+
+            <li>
+                <label class="textarea" for="post_content">Article :</label>
+                <textarea id="post_content" name="post_content" rows="20"><?= $article_to_edit['post_content']?></textarea>
+            </li>
+
+            <li>
+                <button type="submit">Enregistrer</button>
+            </li>
+
+            <li>
+                <input type="reset" value="annuler">
+            </li>
+        </ul>
+    </fieldset>
+
+</form>
+
+<?php
+include_once "partials/footer.html"
+?>

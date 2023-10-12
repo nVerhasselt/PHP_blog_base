@@ -1,0 +1,42 @@
+<?php
+include_once "partials/header.html";
+?>
+
+<?php var_dump('$user'); ?>
+
+<!-- CONNEXION SESSION -->
+
+<form action="/php_initiation/Verhasselt_Nina_Ecf3/login_form.php" method="POST">
+
+    <legend>Se connecter</legend>
+
+    <fieldset>
+
+        <ul>
+            <li>
+                <label for="user_alias">Votre pseudo: </label>
+                <input type="text" id="user_alias" name="user_alias">
+            </li>
+
+            <li>
+                <label for="user_password">Votre mot de passe: </label>
+                <input type="text" id="user_password" name="user_password">
+            </li>
+
+            <li>
+                <button type="submit">Se connecter</button>
+            </li>
+
+            <li>
+                <input type="reset" value="annuler">
+            </li>
+        </ul>
+
+    </fieldset>
+
+</form>
+
+
+<?php
+include_once "partials/footer.html"
+?>
