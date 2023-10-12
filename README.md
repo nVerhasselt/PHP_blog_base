@@ -1,4 +1,4 @@
-This is a prpject I have made around June 2023 during my training. 
+This is a project I have made around June 2023, during my training. I decided to share it on Github even though it has not been finished, in order to offer a vision of my work and progression. 
 
 It is a base for a blog with a CRUD which allows to read, create, edit and delete articles and comments.
 
